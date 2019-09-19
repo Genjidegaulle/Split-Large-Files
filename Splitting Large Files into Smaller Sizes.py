@@ -84,6 +84,7 @@ while True:
 
 # Writing to multiple files
 with open(file_in) as f:
+    header = f.readline()
     part = 0
     total = 0
     
@@ -91,6 +92,7 @@ with open(file_in) as f:
     period_i = file_in.rfind('.')
     file_name = file_in[:period_i] + '_' + str(part) + file_in[period_i:]
     output_file = open(file_name, 'a+')
+    output_file.write(header)
     
     # Reading from input file
     while 1:        
@@ -117,6 +119,7 @@ with open(file_in) as f:
             part += 1
             file_name = file_in[:period_i] + '_' + str(part) + file_in[period_i:]
             output_file = open(file_name, 'a+')
+            output_file.write(header)
 
 
 # In[ ]:
