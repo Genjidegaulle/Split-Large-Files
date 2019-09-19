@@ -6,7 +6,7 @@
 # <strong>Author:</strong> David Liau <br />
 # <strong>Date:</strong> 9/18/2019 <br />
 # <strong>Purpose:</strong> This script serves to take in a large file of size > 1GB, and split it into multiple files of size ~1GB. Any suggestions to improve speed/efficiency would be greatly appreciated. <br />
-# <strong>Version:</strong> 0.0.0
+# <strong>Version:</strong> 0.1.2
 
 # In[ ]:
 
@@ -64,8 +64,8 @@ while True:
         # Checking that size is a string
         size = int(size)
 
-        # Checking for 0 < size < 1000000
-        if size < 1 or size > 1000000:
+        # Checking for 0 < size < 1000000000
+        if size < 1 or size > 1000000000:
             raise AssertionError
         
         # Asking confirmation question
@@ -78,7 +78,7 @@ while True:
             continue
             
     except AssertionError:
-        print("Not a valid size. Please enter an integer between 1 byte and 1GB (1000000 bytes).")
+        print("Not a valid size. Please enter an integer between 1 byte and 1GB (1000000000 bytes).")
     except ValueError:
         print("Not a valid type. Please input an integer.")
 
